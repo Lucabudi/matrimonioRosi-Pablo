@@ -26,24 +26,46 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
-            align-items: flex-end;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            gap: 4rem;
         }
 
+        h1 {
+            font-size: 2.5rem;
+            color: antiquewhite;
+        }
+
+
         .password-box {
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(2px);
             width: 90%;
             max-width: 600px;
         }
 
-        h1 {
-            color: #333;
-            margin-bottom: 1.5rem;
+        .password-box p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 1rem;
         }
+
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .password-box {
+                width: 100%;
+                padding: 1rem;
+                max-width: none;
+            }
+        }
+
 
         input {
             width: 100%;
@@ -86,6 +108,7 @@
 </head>
 <body>
     <div class="container">
+        <h1>Rosi & Pablo</h1>
         <div class="password-box">
             <p>Inserisci la parola magica per entrare</p>
             <input type="password" id="passwordInput" placeholder="Inserisci la parola magica per entrare">
