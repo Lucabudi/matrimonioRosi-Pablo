@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimonio di Rosi & Pablo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+        }
+
+        .hero-content {
+            max-width: 90%;
+            z-index: 2;
+            padding: 2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        .welcome-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down svg {
+            width: 32px;
+            height: 32px;
+            fill: rgba(51, 51, 51, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: #c3cfe2;
+        }
+
+        /* Our Story */
+        .our-story {
+            background-color: #fff;
+        }
+
+        .story-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+            line-height: 1.8;
+        }
+
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Event Details */
+        .event-details {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .detail-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .detail-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .detail-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #c3cfe2;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .heart {
+            color: #ff6b6b;
+        }
+
+        /* Location Section */
+        .location {
+            background-color: #fff;
+        }
+
+        .location-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .location-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: white;
+            padding-bottom: 2rem;
+        }
+
+        .location-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f5f7fa;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .location-image {
+            width: 100%;
+        }
+
+        .location-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .location-info {
+            padding: 0 2rem;
+        }
+
+        .location-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-details {
+            margin: 1.5rem 0;
+        }
+
+        .location-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c3cfe2;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #a5b4cb;
+            transform: translateY(-2px);
+        }
+
+        /* Festa Section */
+        .festa {
+            background-color: #f9f9f9;
+        }
+
+        .festa-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #c3cfe2;
+            top: 0;
+            bottom: 0;
+            left: 120px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-time {
+            min-width: 100px;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 40px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #c3cfe2;
+            border-radius: 50%;
+            left: 115px;
+            top: 15px;
+        }
+
+        .festa-notes {
+            margin-top: 3rem;
+        }
+
+        .festa-notes h3 {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 2rem;
+        }
+
+        .note-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .note-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .note-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Regalo e Alloggio Section */
+        .regalo-alloggio {
+            background-color: #fff;
+        }
+
+        .info-columns {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .info-column {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .regalo-details, .hotel-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .regalo-details h4, .hotel-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1rem;
+        }
+
+        .hotel-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hotel-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        @media (min-width: 768px) {
+            .location-card {
+                flex-direction: row;
+                align-items: stretch;
+                padding-bottom: 0;
+            }
+
+            .location-card h3 {
+                display: none;
+            }
+
+            .location-image {
+                width: 40%;
+                flex-shrink: 0;
+            }
+
+            .location-image img {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .location-info {
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .festa-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .festa-info {
+                flex: 3;
+            }
+
+            .festa-notes {
+                flex: 2;
+                margin-top: 0;
+            }
+
+            .info-columns {
+                flex-direction: row;
+            }
+
+            .info-column {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="welcome-text">Benvenuti al Matrimonio di</p>
+            <h1 class="names">Rosi & Pablo</h1>
+            <p class="date">25 SETTEMBRE 2025</p>
+        </div>
+        <div class="scroll-down">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story" id="story">
+        <div class="container">
+            <h2 class="section-title">La Nostra Storia</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+                    <br>
+                    <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
+                </div>
+                <div class="story-image">
+                    <img src="/api/placeholder/600/400" alt="Rosi & Pablo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details" id="details">
+        <div class="container">
+            <h2 class="section-title">Dettagli Evento</h2>
+            <div class="detail-cards">
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <h3>Data</h3>
+                    <p>Sabato, 25 Settembre 2025<br>16:00</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🏛️</div>
+                    <h3>Cerimonia</h3>
+                    <p>Chiesa San Lorenzo<br>Via Roma 123, Milano</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🍽️</div>
+                    <h3>Ricevimento</h3>
+                    <p>Villa Bellezza<br>Via dei Giardini 45, Milano</p>
+                </div>
+                 <div class="detail-card">
+                    <div class="detail-icon">🎉</div>
+                    <h3>Festa</h3>
+                    <p>Casa del popolo, <br>Casette, Massa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title">Location</h2>
+            <div class="location-container">
+                <div class="location-card">
+                    <h3>Cerimonia</h3>
+                    <div class="location-image">
+                        <img src="/api/placeholder/600/400" alt="Chiesa San Lorenzo">
+                    </div>
+                    <div class="location-info">
+                        <h4>Chiesa San Lorenzo</h4>
+                        <p>La cerimonia si terrà nella storica Chiesa di San Lorenzo, un bellissimo edificio del XVI secolo nel cuore di Milano.</p>
+                        <div class="location-details">
+                            <p><strong>Indirizzo:</strong> Via Roma 123, Milano</p>
+                            <p><strong>Orario:</strong> 16:00</p>
+                            <p><strong>Parcheggio:</strong> Disponibile nelle vicinanze</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <h3>Ricevimento</h3>
+                    <div class="location-image">
+                        <img src="/api/placeholder/600/400" alt="Villa Bellezza">
+                    </div>
+                    <div class="location-info">
+                        <h4>Villa Bellezza</h4>
+                        <p>Il ricevimento avrà luogo nella meravigliosa Villa Bellezza, circondata da giardini e con una splendida vista sul lago.</p>
+                        <div class="location-details">
+                            <p><strong>Indirizzo:</strong> Via dei Giardini 45, Milano</p>
+                            <p><strong>Distanza dalla chiesa:</strong> 15 minuti in auto</p>
+                            <p><strong>Parcheggio:</strong> Ampio parcheggio gratuito disponibile</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festa Section -->
+    <section class="festa" id="festa">
+        <div class="container">
+            <h2 class="section-title">La Festa</h2>
+            <div class="festa-content">
+                <div class="festa-info">
+                    <h3>Programma della Giornata</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">16:00</div>
+                            <div class="timeline-content">
+                                <h4>Cerimonia</h4>
+                                <p>Chiesa San Lorenzo</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:30</div>
+                            <div class="timeline-content">
+                                <h4>Aperitivo di Benvenuto</h4>
+                                <p>Giardini di Villa Bellezza</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:00</div>
+                            <div class="timeline-content">
+                                <h4>Cena</h4>
+                                <p>Salone principale di Villa Bellezza</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">21:30</div>
+                            <div class="timeline-content">
+                                <h4>Taglio della Torta</h4>
+                                <p>Terrazza panoramica</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">22:00</div>
+                            <div class="timeline-content">
+                                <h4>Festa con DJ</h4>
+                                <p>Fino a tarda notte!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="festa-notes">
+                    <h3>Note</h3>
+                    <div class="note-card">
+                        <div class="note-icon">🎵</div>
+                        <h4>Musica</h4>
+                        <p>Se avete delle canzoni che vorreste ascoltare durante la festa, inviateci le vostre richieste!</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon">📸</div>
+                        <h4>Foto</h4>
+                        <p>Usate l'hashtag #RosiPablo2025 per condividere le vostre foto sui social!</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon">👗</div>
+                        <h4>Dress Code</h4>
+                        <p>Elegante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalo e Alloggio Section -->
+    <section class="regalo-alloggio" id="info">
+        <div class="container">
+            <h2 class="section-title">Regalo e Dove Dormire</h2>
+            <div class="info-columns">
+                <div class="info-column regalo">
+                    <div class="info-icon">🎁</div>
+                    <h3>Lista Nozze</h3>
+                    <p>Il vostro affetto e la vostra presenza sono il regalo più grande. Tuttavia, se desiderate farci un regalo, apprezzeremmo un contributo al nostro viaggio di nozze.</p>
+                    <div class="regalo-details">
+                        <h4>Coordinate Bancarie</h4>
+                        <p><strong>Intestatario:</strong> Rosi e Pablo</p>
+                        <p><strong>IBAN:</strong> IT12A0123456789012345678901</p>
+                        <p><strong>Causale:</strong> Regalo di nozze</p>
+                    </div>
+                </div>
+                <div class="info-column alloggio">
+                    <div class="info-icon">🏨</div>
+                    <h3>Dove Dormire</h3>
+                    <p>Per gli ospiti che vengono da fuori città, abbiamo selezionato alcune strutture nelle vicinanze della location:</p>
+                    <div class="hotel-list">
+                        <div class="hotel-item">
+                            <h4>Hotel Belvedere</h4>
+                            <p><strong>Distanza:</strong> 5 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 1234567</p>
+                            <p><strong>Email:</strong> info@hotelbelvedere.it</p>
+                            <p>Menzionate che siete ospiti del matrimonio per ottenere uno sconto speciale.</p>
+                        </div>
+                        <div class="hotel-item">
+                            <h4>Residence Flora</h4>
+                            <p><strong>Distanza:</strong> 10 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 7654321</p>
+                            <p><strong>Email:</strong> booking@residenceflora.it</p>
+                        </div>
+                        <div class="hotel-item">
+                            <h4>B&B Il Giardino</h4>
+                            <p><strong>Distanza:</strong> 15 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 9876543</p>
+                            <p><strong>Email:</strong> ilgiardino@email.it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Con amore, Rosi & Pablo</p>
+            <p>Non vediamo l'ora di festeggiare con voi!</p>
+            <p>&copy; 2025 | Rosi & Pablo Wedding</p>
+        </div>
+    </footer>
+</body>
+</html>

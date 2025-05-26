@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password-box {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(8px);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357abD;
+        }
+
+        .message {
+            color: #e74c3c;
+            margin-top: 0.5rem;
+            min-height: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="password-box">
+            <p>Inserisci la parola magica per entrare</p>
+            <input type="password" id="passwordInput" placeholder="Inserisci la parola magica per entrare">
+            <div class="message" id="message"></div>
+            <button onclick="checkPassword()">Fammi entrare</button>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // Replace 'secret123' with your desired password
+            const correctPassword = 'prova';
+            const passwordInput = document.getElementById('passwordInput');
+            const message = document.getElementById('message');
+
+            if (passwordInput.value === correctPassword) {
+                // Redirect to the main page on correct password
+                window.location.href = 'main.html';
+            } else {
+                // Show error message
+                message.textContent = 'Ops password errato, sei sicur* di essere stat* invitata ?? :D';
+                passwordInput.value = '';
+                setTimeout(() => {
+                    message.textContent = '';
+                }, 3000);
+            }
+        }
+
+        // Also check password when Enter key is pressed
+        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+</body>
+</html>
