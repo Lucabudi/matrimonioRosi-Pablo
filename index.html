@@ -1,151 +1,750 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Matrimonio di Rosalia & Pablo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body, html {
             height: 100%;
-            width: 100%;
-            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
         }
 
-        .container {
-            height: 100%;
+
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
             width: 100%;
             background-image: url(websitebackground.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            gap: 4rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
-            margin-top: 100px;
-            font-size: 6.5rem;
-            color: white;
-            text-shadow: 1px 1px 1px #000;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
         }
 
-
-        .password-box {
+        .hero-content {
+            z-index: 2;
             padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            backdrop-filter: blur(1px);
-            width: 90%;
-            max-width: 600px;
-            margin-top: auto;
+            animation: fadeIn 2s ease;
         }
 
-        .password-box p {
-            font-size: 1.2rem;
-            color: white;
+        .welcome-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #666;
             margin-bottom: 1rem;
         }
 
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 3rem;
-            }
-            .password-box {
-                width: 100%;
-                padding: 1rem;
-                max-width: none;
-            }
+        .names {
+            font-family: "Pacifico";
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 300px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
         }
 
+        .date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #666;
+        }
 
-        input {
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down svg {
+            width: 32px;
+            height: 32px;
+            fill: rgba(51, 51, 51, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: #c3cfe2;
+        }
+
+        /* Our Story */
+        .our-story {
+            background-color: #dcecc8;
+        }
+
+        .story-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+            line-height: 1.8;
+        }
+
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .story-image img {
             width: 100%;
-            padding: 0.8rem;
-            margin: 1rem 0;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-            background-color: rgba(255, 255, 255, 0.8);
+            height: auto;
+            display: block;
         }
 
-        input:focus {
-            outline: none;
-            border-color: #4a90e2;
+        /* Event Details */
+        .event-details {
+            background-color: #f9f9f9;
+            text-align: center;
         }
 
-        button {
-            background-color: #4a90e2;
+        .detail-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .detail-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .detail-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #c3cfe2;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
             color: white;
-            border: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .heart {
+            color: #ff6b6b;
+        }
+
+        /* Location Section */
+        .location {
+            background-color: #fff;
+        }
+
+        .location-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .location-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            background: white;
+            padding-bottom: 2rem;
+        }
+
+        .location-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f5f7fa;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .location-image {
+            width: 100%;
+        }
+
+        .location-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .location-info {
+            padding: 0 2rem;
+        }
+
+        .location-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-details {
+            margin: 1.5rem 0;
+        }
+
+        .location-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c3cfe2;
+            color: #333;
             padding: 0.8rem 1.5rem;
             border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        button:hover {
-            background-color: #357abD;
+        .btn:hover {
+            background-color: #a5b4cb;
+            transform: translateY(-2px);
         }
 
-        .message {
-            color: #e74c3c;
-            margin-top: 0.5rem;
-            min-height: 20px;
-            font-size: 0.9rem;
+        /* Festa Section */
+        .festa {
+            background-color: #f9f9f9;
+        }
+
+        .festa-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #c3cfe2;
+            top: 0;
+            bottom: 0;
+            left: 120px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-time {
+            min-width: 100px;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 40px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #c3cfe2;
+            border-radius: 50%;
+            left: 115px;
+            top: 15px;
+        }
+
+        .festa-notes {
+            margin-top: 3rem;
+        }
+
+        .festa-notes h3 {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 2rem;
+        }
+
+        .note-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .note-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .note-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Regalo e Alloggio Section */
+        .regalo-alloggio {
+            background-color: #fff;
+        }
+
+        .info-columns {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .info-column {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .regalo-details, .hotel-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .regalo-details h4, .hotel-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1rem;
+        }
+
+        .hotel-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hotel-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        @media (min-width: 768px) {
+            .location-card {
+                flex-direction: row;
+                align-items: stretch;
+                padding-bottom: 0;
+            }
+
+            .location-card h3 {
+                display: none;
+            }
+
+            .location-image {
+                width: 40%;
+                flex-shrink: 0;
+            }
+
+            .location-image img {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .location-info {
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .festa-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .festa-info {
+                flex: 3;
+            }
+
+            .festa-notes {
+                flex: 2;
+                margin-top: 0;
+            }
+
+            .info-columns {
+                flex-direction: row;
+            }
+
+            .info-column {
+                flex: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Rosalia & Pablo</h1>
-        <div class="password-box">
-            <p>Inserisci la parola magica per entrare</p>
-            <input type="password" id="passwordInput" placeholder="Inserisci la parola magica per entrare">
-            <div class="message" id="message"></div>
-            <button onclick="checkPassword()">Fammi entrare</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- <p class="welcome-text">Benvenuti al Matrimonio di</p> -->
+            <!-- <h2 class="names">Rosalia & Pablo</h2> -->
+            <!-- <p class="date">25 SETTEMBRE 2025</p> -->
         </div>
-    </div>
+        <div class="scroll-down">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
 
-    <script>
-        function checkPassword() {
-            // Replace 'secret123' with your desired password
-            const correctPassword = 'prova';
-            const passwordInput = document.getElementById('passwordInput');
-            const message = document.getElementById('message');
+    <section style="padding:0; margin:0; background-color: #dcecc8; font-family: Pacifico;">
+        <div style="position:relative; top: 80px; width:100%; text-align:center; color:#232323; padding: 10px 20px;">
+            <h2 class="">Rosalia & Pablo</h2>
+            <p style="font-size:1rem; margin-bottom:0.5rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">ci sposiamo!</p>
+            <p style="font-size:1.1rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">20 Settembre 2025</p>
+        </div>
+        <img src="fioricampo3.webp" alt="Fiori di campo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
+    </section>
 
-            if (passwordInput.value === correctPassword) {
-                // Redirect to the main page on correct password
-                window.location.href = 'main.html';
-            } else {
-                // Show error message
-                message.textContent = 'Ops password errato, sei sicur* di essere stat* invitata ?? :D';
-                passwordInput.value = '';
-                setTimeout(() => {
-                    message.textContent = '';
-                }, 3000);
-            }
-        }
 
-        // Also check password when Enter key is pressed
-        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                checkPassword();
-            }
-        });
-    </script>
+    <!-- Our Story Section -->
+    <section class="our-story" id="story">
+        <div class="container">
+            <h2 class="section-title">MATRIMONIO RIVOLUZIONARIO</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p style="text-align: center;">Dopo 25 anni... ci sposiamo!</p>
+                        <p style="text-align: center;">S&igrave;, avete capito bene.<br />Contro ogni previsione, il grande passo &egrave; arrivato:<br />abbiamo ceduto al matrimonio, ma a modo nostro.</p>
+                        <p style="text-align: center;">Sar&agrave; una festa.<br />Un pretesto per ballare, per incontrarci, per abbracciarci forte.<br />Un tempo di pace,<br />un momento di gioia collettiva<br />e una celebrazione dell&rsquo;amore, della vita, degli affetti che resistono.</p>
+                        <p style="text-align: center;">Si canta, si brinda, si balla fino a far tremare le montagne.</p>
+                        <p style="text-align: center;">Portatevi:</p>
+                        <ul style="text-align: center;">
+                        <b>
+                            <p>lo spirito ribelle</p>
+                            <p>scarpe comode</p>
+                            <p>e il cuore aperto</p>
+                        </b>
+                        </ul>
+                        <p style="text-align: center;">&nbsp;</p>
+                        <p style="text-align: center;">Venite a celebrare con noi. &Egrave; il nostro modo di dire s&igrave; alla vita, a tutte e tutti noi!</p>
+                </div>
+                <div class="story-image">
+                    <img src="foto2.jpg" alt="Rosi & Pablo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details" id="details">
+        <div class="container">
+            <h2 class="section-title">Dettagli Evento</h2>
+            <div class="detail-cards">
+                <div class="detail-card">
+                    <div class="detail-icon">📅</div>
+                    <h3>Data</h3>
+                    <p>Sabato, 20 Settembre 2025<br>12:00</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🏛️</div>
+                    <h3>Cerimonia di matrimonio civile</h3>
+                    <p>Teatro Guglielmi<br>Massa, Toscana</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🍽️</div>
+                    <h3>Banchetto nuziale - Pranzo</h3>
+                    <p>Ristorante Cima<br>Via del Fagiano, 1 Massa</p>
+                </div>
+                 <div class="detail-card">
+                    <div class="detail-icon">🎉</div>
+                    <h3>Festa</h3>
+                    <p>Casa del popolo, <br>Casette, Massa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title">Location</h2>
+            <div class="location-container">
+                <div class="location-card">
+                    <h3>Cerimonia</h3>
+                    <div class="location-image">
+                        <img src="https://www.escursioniapuane.com/public/itinerari/001Fab.jpg" alt="Chiesa San Lorenzo">
+                    </div>
+                    <div class="location-info">
+                        <h4>Chiesa San Lorenzo</h4>
+                        <p>La cerimonia si terrà nella storica Chiesa di San Lorenzo, un bellissimo edificio del XVI secolo nel cuore di Milano.</p>
+                        <div class="location-details">
+                            <p><strong>Indirizzo:</strong> Via Roma 123, Milano</p>
+                            <p><strong>Orario:</strong> 16:00</p>
+                            <p><strong>Parcheggio:</strong> Disponibile nelle vicinanze</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <h3>Ricevimento</h3>
+                    <div class="location-image">
+                        <img src="https://www.escursioniapuane.com/public/itinerari/001Fab.jpg" alt="Villa Bellezza">
+                    </div>
+                    <div class="location-info">
+                        <h4>Villa Bellezza</h4>
+                        <p>Il ricevimento avrà luogo nella meravigliosa Villa Bellezza, circondata da giardini e con una splendida vista sul lago.</p>
+                        <div class="location-details">
+                            <p><strong>Indirizzo:</strong> Via dei Giardini 45, Milano</p>
+                            <p><strong>Distanza dalla chiesa:</strong> 15 minuti in auto</p>
+                            <p><strong>Parcheggio:</strong> Ampio parcheggio gratuito disponibile</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festa Section -->
+    <section class="festa" id="festa">
+        <div class="container">
+            <h2 class="section-title">La Festa</h2>
+            <div class="festa-content">
+                <div class="festa-info">
+                    <h3>Programma della Giornata</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">16:00</div>
+                            <div class="timeline-content">
+                                <h4>Cerimonia</h4>
+                                <p>Chiesa San Lorenzo</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:30</div>
+                            <div class="timeline-content">
+                                <h4>Aperitivo di Benvenuto</h4>
+                                <p>Giardini di Villa Bellezza</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:00</div>
+                            <div class="timeline-content">
+                                <h4>Cena</h4>
+                                <p>Salone principale di Villa Bellezza</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">21:30</div>
+                            <div class="timeline-content">
+                                <h4>Taglio della Torta</h4>
+                                <p>Terrazza panoramica</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">22:00</div>
+                            <div class="timeline-content">
+                                <h4>Festa con DJ</h4>
+                                <p>Fino a tarda notte!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="festa-notes">
+                    <h3>Note</h3>
+                    <div class="note-card">
+                        <div class="note-icon">🎵</div>
+                        <h4>Musica</h4>
+                        <p>Se avete delle canzoni che vorreste ascoltare durante la festa, inviateci le vostre richieste!</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon">📸</div>
+                        <h4>Foto</h4>
+                        <p>Usate l'hashtag #RosiPablo2025 per condividere le vostre foto sui social!</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon">👗</div>
+                        <h4>Dress Code</h4>
+                        <p>Elegante</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalo e Alloggio Section -->
+    <section class="regalo-alloggio" id="info">
+        <div class="container">
+            <h2 class="section-title">Regalo</h2>
+            <div class="info-columns">
+                <div class="info-column regalo">
+                    <div class="info-icon">🎁</div>
+                    <h3>Lista Nozze</h3>
+                    <p>Il nostro desiderio è che partecipiate tutti al nostro giorno, e se vi facesse piacere contribuire ad un altro sogno indimenticabile potete farlo qui.</p>
+                    <div class="regalo-details">
+                        <h4>Coordinate Bancarie</h4>
+                        <p><strong>Intestatario:</strong>Rosalia Giannotti</p>
+                        <p><strong>IBAN:</strong> IT36X0306901775000000342173</p>
+                        <p><strong>Causale:</strong>Casette 2025 l'Evento</p>
+                    </div>
+                </div>
+                <!-- <div class="info-column alloggio">
+                    <div class="info-icon">🏨</div>
+                    <h3>Dove Dormire</h3>
+                    <p>Per gli ospiti che vengono da fuori città, abbiamo selezionato alcune strutture nelle vicinanze della location:</p>
+                    <div class="hotel-list">
+                        <div class="hotel-item">
+                            <h4>Hotel Belvedere</h4>
+                            <p><strong>Distanza:</strong> 5 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 1234567</p>
+                            <p><strong>Email:</strong> info@hotelbelvedere.it</p>
+                            <p>Menzionate che siete ospiti del matrimonio per ottenere uno sconto speciale.</p>
+                        </div>
+                        <div class="hotel-item">
+                            <h4>Residence Flora</h4>
+                            <p><strong>Distanza:</strong> 10 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 7654321</p>
+                            <p><strong>Email:</strong> booking@residenceflora.it</p>
+                        </div>
+                        <div class="hotel-item">
+                            <h4>B&B Il Giardino</h4>
+                            <p><strong>Distanza:</strong> 15 minuti dalla location</p>
+                            <p><strong>Telefono:</strong> +39 02 9876543</p>
+                            <p><strong>Email:</strong> ilgiardino@email.it</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Con amore, Rosalia & Pablo</p>
+            <p>Non vediamo l'ora di festeggiare con voi!</p>
+            <p>&copy; 2025 | Rosalia & Pablo</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            background-image: url(websitebackground.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            gap: 4rem;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 6.5rem;
+            color: white;
+            text-shadow: 1px 1px 1px #000;
+        }
+
+
+        .password-box {
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(1px);
+            width: 90%;
+            max-width: 600px;
+            margin-top: auto;
+        }
+
+        .password-box p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .password-box {
+                width: 100%;
+                padding: 1rem;
+                max-width: none;
+            }
+        }
+
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357abD;
+        }
+
+        .message {
+            color: #e74c3c;
+            margin-top: 0.5rem;
+            min-height: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rosalia & Pablo</h1>
+        <div class="password-box">
+            <p>Inserisci la parola magica per entrare</p>
+            <input type="password" id="passwordInput" placeholder="Inserisci la parola magica per entrare">
+            <div class="message" id="message"></div>
+            <button onclick="checkPassword()">Fammi entrare</button>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // Replace 'secret123' with your desired password
+            const correctPassword = 'prova';
+            const passwordInput = document.getElementById('passwordInput');
+            const message = document.getElementById('message');
+
+            if (passwordInput.value === correctPassword) {
+                // Redirect to the main page on correct password
+                window.location.href = 'main.html';
+            } else {
+                // Show error message
+                message.textContent = 'Ops password errato, sei sicur* di essere stat* invitata ?? :D';
+                passwordInput.value = '';
+                setTimeout(() => {
+                    message.textContent = '';
+                }, 3000);
+            }
+        }
+
+        // Also check password when Enter key is pressed
+        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+</body>
+</html>
