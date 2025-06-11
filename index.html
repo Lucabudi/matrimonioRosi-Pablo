@@ -27,7 +27,7 @@
         .hero {
             height: 60vh;
             width: 100%;
-            background-image: url(websitebackground.jpg);
+            background-image: url(Pablorosi1.jpeg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -38,6 +38,26 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        h2{
+            font-size: 40px;
+        }
+
+        .intro-text{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .hero{
+                height: 80vh;
+            }
+
+            h2{
+                font-size: 80px;
+            }
         }
 
         .hero::before {
@@ -256,6 +276,7 @@
 
         .location-image img {
             width: 100%;
+            max-height: 360px;
             height: auto;
             display: block;
         }
@@ -449,6 +470,8 @@
             border-bottom: none;
         }
 
+
+
         @media (min-width: 768px) {
             .location-card {
                 flex-direction: row;
@@ -516,11 +539,11 @@
         </div>
     </section>
 
-    <section style="padding:0; margin:0; background-color: #dcecc8; font-family: Pacifico;">
+    <section class="intro-text" style="padding:0; margin:0; background-color: #dcecc8; font-family: Pacifico;">
         <div style="position:relative; top: 80px; width:100%; text-align:center; color:#232323; padding: 10px 20px;">
             <h2 class="">Rosalia & Pablo</h2>
-            <p style="font-size:1rem; margin-bottom:0.5rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">ci sposiamo!</p>
-            <p style="font-size:1.1rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">20 Settembre 2025</p>
+            <p class="text-p" style="margin-bottom:0.5rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">ci sposiamo!</p>
+            <p class="data-text" style="text-shadow:0 2px 8px rgba(0,0,0,0.2);">20 Settembre 2025</p>
         </div>
         <img src="fioricampo3.webp" alt="Fiori di campo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
     </section>
@@ -591,32 +614,30 @@
                 <div class="location-card">
                     <h3>Cerimonia</h3>
                     <div class="location-image">
-                        <img src="https://www.escursioniapuane.com/public/itinerari/001Fab.jpg" alt="Chiesa San Lorenzo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Massa_-_Teatro_Guglielmi_-_2023-09-04_16-38-29_003.jpg" alt="Chiesa San Lorenzo">
                     </div>
                     <div class="location-info">
-                        <h4>Chiesa San Lorenzo</h4>
-                        <p>La cerimonia si terrà nella storica Chiesa di San Lorenzo, un bellissimo edificio del XVI secolo nel cuore di Milano.</p>
+                        <h4>Cerimonia: Teatro Guglielmi</h4>
+                        <p>La cerimonia si terrà all'interno di una delle sale del Teatro Guglielmi, a Massa</p>
                         <div class="location-details">
-                            <p><strong>Indirizzo:</strong> Via Roma 123, Milano</p>
-                            <p><strong>Orario:</strong> 16:00</p>
-                            <p><strong>Parcheggio:</strong> Disponibile nelle vicinanze</p>
+                            <p><strong>Indirizzo:</strong>P.za del Teatro, 54100 Massa MS</p>
+                            <p><strong>Orario:</strong> 12:00</p>
                         </div>
-                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                        <a href="https://maps.app.goo.gl/YtKmYM2gq772d4Yv9" target="_blank" class="btn">Visualizza sulla mappa</a>
                     </div>
                 </div>
 
                 <div class="location-card">
                     <h3>Ricevimento</h3>
                     <div class="location-image">
-                        <img src="https://www.escursioniapuane.com/public/itinerari/001Fab.jpg" alt="Villa Bellezza">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr8RG96wfMWnnTIcm68xGtuD0Kub6GtbEDdkzy8JSoL96KYv3ellFvKx2KoP3E0PbGc6Gg5p8DQq7cu5j4Moq4-F07Zu94mxXR98mU38Ehz3kUZRV1db5WYBhOE6OVlSvMk1fDt=s1360-w1360-h1020-rw" alt="Villa Bellezza">
                     </div>
                     <div class="location-info">
-                        <h4>Villa Bellezza</h4>
-                        <p>Il ricevimento avrà luogo nella meravigliosa Villa Bellezza, circondata da giardini e con una splendida vista sul lago.</p>
+                        <h4>Ricevimento: Ristorante Cima</h4>
+                        <p>Il pranzo si svolgerà presso la stupenda location del ristorante</p>
                         <div class="location-details">
-                            <p><strong>Indirizzo:</strong> Via dei Giardini 45, Milano</p>
-                            <p><strong>Distanza dalla chiesa:</strong> 15 minuti in auto</p>
-                            <p><strong>Parcheggio:</strong> Ampio parcheggio gratuito disponibile</p>
+                            <p><strong>Indirizzo:</strong> Via del Fagiano, 1, 54100 Massa MS</p>
+                            <p><strong>Distanza dalla chiesa:</strong> 9 minuti in auto</p>
                         </div>
                         <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
                     </div>
