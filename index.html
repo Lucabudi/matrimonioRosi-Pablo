@@ -6,7 +6,8 @@
     <title>Matrimonio di Rosalia & Pablo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -16,7 +17,7 @@
 
         body, html {
             height: 100%;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Libre Baskerville", serif;
             scroll-behavior: smooth;
             color: #333;
         }
@@ -47,12 +48,26 @@
         .intro-text{
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 20px;
         }
 
         @media (min-width: 768px) {
             .hero{
-                height: 80vh;
+                height: 85vh;
+                background-position-y: top;
+            }
+
+            h2{
+                font-size: 80px;
+            }
+        }
+
+        @media (min-width: 1068px) {
+            .hero{
+                height: 85vh;
+                background-position-y: center;
             }
 
             h2{
@@ -77,14 +92,13 @@
         }
 
         .welcome-text {
-            font-family: 'Great Vibes', cursive;
             font-size: 2rem;
             color: #666;
             margin-bottom: 1rem;
         }
 
         .names {
-            font-family: "Pacifico";
+
             font-size: 2.6rem;
             font-weight: 700;
             color: #ffffff;
@@ -94,7 +108,6 @@
         }
 
         .date {
-            font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 2px;
@@ -126,7 +139,6 @@
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             text-align: center;
             margin-bottom: 3rem;
@@ -146,7 +158,7 @@
 
         /* Our Story */
         .our-story {
-            background-color: #dcecc8;
+            background-color: #9b9958d4;
         }
 
         .story-content {
@@ -207,7 +219,7 @@
         }
 
         .detail-card h3 {
-            font-family: 'Cormorant Garamond', serif;
+
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -262,7 +274,7 @@
         }
 
         .location-card h3 {
-            font-family: 'Cormorant Garamond', serif;
+
             text-align: center;
             padding: 1.5rem;
             background-color: #f5f7fa;
@@ -286,7 +298,7 @@
         }
 
         .location-info h4 {
-            font-family: 'Cormorant Garamond', serif;
+
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -303,11 +315,12 @@
             display: inline-block;
             background-color: #c3cfe2;
             color: #333;
-            padding: 0.8rem 1.5rem;
+            padding: 24px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            max-width: fit-content;
         }
 
         .btn:hover {
@@ -365,7 +378,7 @@
 
         .timeline-content h4 {
             margin-bottom: 0.5rem;
-            font-family: 'Cormorant Garamond', serif;
+
         }
 
         .timeline-item::before {
@@ -385,7 +398,7 @@
 
         .festa-notes h3 {
             text-align: center;
-            font-family: 'Cormorant Garamond', serif;
+
             margin-bottom: 2rem;
         }
 
@@ -407,7 +420,7 @@
         }
 
         .note-card h4 {
-            font-family: 'Cormorant Garamond', serif;
+
             margin-bottom: 0.5rem;
         }
 
@@ -439,7 +452,7 @@
         }
 
         .info-column h3 {
-            font-family: 'Cormorant Garamond', serif;
+
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
         }
@@ -454,7 +467,6 @@
         }
 
         .regalo-details h4, .hotel-item h4 {
-            font-family: 'Cormorant Garamond', serif;
             margin-bottom: 1rem;
         }
 
@@ -539,25 +551,21 @@
         </div>
     </section>
 
-    <section class="intro-text" style="padding:0; margin:0; background-color: #dcecc8; font-family: Pacifico;">
-        <div style="position:relative; top: 80px; width:100%; text-align:center; color:#232323; padding: 10px 20px;">
+    <section class="intro-text" style="padding:80px 0 40px 0; background-color: #9b9958d4">
             <h2 class="">Rosalia & Pablo</h2>
-            <p class="text-p" style="margin-bottom:0.5rem; text-shadow:0 2px 8px rgba(0,0,0,0.2);">ci sposiamo!</p>
             <p class="data-text" style="text-shadow:0 2px 8px rgba(0,0,0,0.2);">20 Settembre 2025</p>
-        </div>
-        <img src="fioricampo3.webp" alt="Fiori di campo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;">
+        <!-- <img src="fioricampo3.webp" alt="Fiori di campo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;"> -->
     </section>
 
 
     <!-- Our Story Section -->
-    <section class="our-story" id="story">
+    <section class="our-story" id="story" style="padding: 40px;">
         <div class="container">
-            <h2 class="section-title">MATRIMONIO RIVOLUZIONARIO</h2>
             <div class="story-content">
                 <div class="story-text">
                     <p style="text-align: center;">Dopo 25 anni... ci sposiamo!</p>
-                        <p style="text-align: center;">S&igrave;, avete capito bene.<br />Contro ogni previsione, il grande passo &egrave; arrivato:<br />abbiamo ceduto al matrimonio, ma a modo nostro.</p>
-                        <p style="text-align: center;">Sar&agrave; una festa.<br />Un pretesto per ballare, per incontrarci, per abbracciarci forte.<br />Un tempo di pace,<br />un momento di gioia collettiva<br />e una celebrazione dell&rsquo;amore, della vita, degli affetti che resistono.</p>
+                        <p style="text-align: center;">S&igrave;, avete capito bene.<br />alla fine abbiamo deciso di farlo a modo nostro!</p>
+                        <p style="text-align: center;">Sar&agrave; una festa.<br />Un pretesto per ballare, per incontrarci, per abbracciarci forte.<br /></p>
                         <p style="text-align: center;">Si canta, si brinda, si balla fino a far tremare le montagne.</p>
                         <p style="text-align: center;">Portatevi:</p>
                         <ul style="text-align: center;">
@@ -568,7 +576,7 @@
                         </b>
                         </ul>
                         <p style="text-align: center;">&nbsp;</p>
-                        <p style="text-align: center;">Venite a celebrare con noi. &Egrave; il nostro modo di dire s&igrave; alla vita, a tutte e tutti noi!</p>
+                        <p style="text-align: center;">Venite a celebrare con noi. &Egrave; il nostro modo di dire s&igrave;<br/> <b> alla vita, a tutte e tutti noi!</b></p>
                 </div>
                 <div class="story-image">
                     <img src="foto2.jpg" alt="Rosi & Pablo">
@@ -585,16 +593,16 @@
                 <div class="detail-card">
                     <div class="detail-icon">📅</div>
                     <h3>Data</h3>
-                    <p>Sabato, 20 Settembre 2025<br>12:00</p>
+                    <p>Sabato, 20 Settembre<br>12:00</p>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🏛️</div>
-                    <h3>Cerimonia di matrimonio civile</h3>
+                    <div class="detail-icon">💐</div>
+                    <h3>Cerimonia</h3>
                     <p>Teatro Guglielmi<br>Massa, Toscana</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-icon">🍽️</div>
-                    <h3>Banchetto nuziale - Pranzo</h3>
+                    <h3>Banchetto</h3>
                     <p>Ristorante Cima<br>Via del Fagiano, 1 Massa</p>
                 </div>
                  <div class="detail-card">
@@ -609,7 +617,7 @@
     <!-- Location Section -->
     <section class="location" id="location">
         <div class="container">
-            <h2 class="section-title">Location</h2>
+            <h2 class="section-title">Il programma della giornata</h2>
             <div class="location-container">
                 <div class="location-card">
                     <h3>Cerimonia</h3>
@@ -618,7 +626,6 @@
                     </div>
                     <div class="location-info">
                         <h4>Cerimonia: Teatro Guglielmi</h4>
-                        <p>La cerimonia si terrà all'interno di una delle sale del Teatro Guglielmi, a Massa</p>
                         <div class="location-details">
                             <p><strong>Indirizzo:</strong>P.za del Teatro, 54100 Massa MS</p>
                             <p><strong>Orario:</strong> 12:00</p>
@@ -630,88 +637,36 @@
                 <div class="location-card">
                     <h3>Ricevimento</h3>
                     <div class="location-image">
-                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr8RG96wfMWnnTIcm68xGtuD0Kub6GtbEDdkzy8JSoL96KYv3ellFvKx2KoP3E0PbGc6Gg5p8DQq7cu5j4Moq4-F07Zu94mxXR98mU38Ehz3kUZRV1db5WYBhOE6OVlSvMk1fDt=s1360-w1360-h1020-rw" alt="Villa Bellezza">
+                        <img src="/ristorante.jpeg" alt="Villa Bellezza">
                     </div>
                     <div class="location-info">
                         <h4>Ricevimento: Ristorante Cima</h4>
-                        <p>Il pranzo si svolgerà presso la stupenda location del ristorante</p>
                         <div class="location-details">
                             <p><strong>Indirizzo:</strong> Via del Fagiano, 1, 54100 Massa MS</p>
                             <p><strong>Distanza dalla chiesa:</strong> 9 minuti in auto</p>
                         </div>
-                        <a href="https://maps.google.com" target="_blank" class="btn">Visualizza sulla mappa</a>
+                        <a href="https://g.co/kgs/GcFu7Wm" target="_blank" class="btn">Visualizza sulla mappa</a>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <h3>Festa</h3>
+                    <div class="location-image">
+                        <img src="/festa.jpeg" alt="Villa Bellezza">
+                    </div>
+                    <div class="location-info">
+                        <h4>Festa: Casa del Popolo</h4>
+                        <div class="location-details">
+                            <p><strong>Indirizzo:</strong> Casette, Massa</p>
+                            <p><strong>Orario:</strong> 18:00</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/9j1V2oY8QBSiuDC2A" target="_blank" class="btn">Visualizza sulla mappa</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Festa Section -->
-    <section class="festa" id="festa">
-        <div class="container">
-            <h2 class="section-title">La Festa</h2>
-            <div class="festa-content">
-                <div class="festa-info">
-                    <h3>Programma della Giornata</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-time">16:00</div>
-                            <div class="timeline-content">
-                                <h4>Cerimonia</h4>
-                                <p>Chiesa San Lorenzo</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">17:30</div>
-                            <div class="timeline-content">
-                                <h4>Aperitivo di Benvenuto</h4>
-                                <p>Giardini di Villa Bellezza</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">19:00</div>
-                            <div class="timeline-content">
-                                <h4>Cena</h4>
-                                <p>Salone principale di Villa Bellezza</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">21:30</div>
-                            <div class="timeline-content">
-                                <h4>Taglio della Torta</h4>
-                                <p>Terrazza panoramica</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">22:00</div>
-                            <div class="timeline-content">
-                                <h4>Festa con DJ</h4>
-                                <p>Fino a tarda notte!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="festa-notes">
-                    <h3>Note</h3>
-                    <div class="note-card">
-                        <div class="note-icon">🎵</div>
-                        <h4>Musica</h4>
-                        <p>Se avete delle canzoni che vorreste ascoltare durante la festa, inviateci le vostre richieste!</p>
-                    </div>
-                    <div class="note-card">
-                        <div class="note-icon">📸</div>
-                        <h4>Foto</h4>
-                        <p>Usate l'hashtag #RosiPablo2025 per condividere le vostre foto sui social!</p>
-                    </div>
-                    <div class="note-card">
-                        <div class="note-icon">👗</div>
-                        <h4>Dress Code</h4>
-                        <p>Elegante</p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
 
     <!-- Regalo e Alloggio Section -->
     <section class="regalo-alloggio" id="info">
@@ -720,12 +675,10 @@
             <div class="info-columns">
                 <div class="info-column regalo">
                     <div class="info-icon">🎁</div>
-                    <h3>Lista Nozze</h3>
-                    <p>Il nostro desiderio è che partecipiate tutti al nostro giorno, e se vi facesse piacere contribuire ad un altro sogno indimenticabile potete farlo qui.</p>
+                    <p>Il nostro desiderio più grande è che tutte e tutti possiate partecipare al nostro giorno! Se vi facesse piacere contribuire con un dono, potete farlo qui!</p>
                     <div class="regalo-details">
-                        <h4>Coordinate Bancarie</h4>
-                        <p><strong>Intestatario:</strong>Rosalia Giannotti</p>
                         <p><strong>IBAN:</strong> IT36X0306901775000000342173</p>
+                        <p><strong>Intestataria:</strong>Rosalia Giannotti</p>
                         <p><strong>Causale:</strong>Casette 2025 l'Evento</p>
                     </div>
                 </div>
