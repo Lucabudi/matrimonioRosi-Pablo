@@ -28,7 +28,7 @@
         .hero {
             height: 60vh;
             width: 100%;
-            background-image: url(Pablorosi2.jpeg);
+            background-image: url(fotositomatrimonio.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -52,15 +52,31 @@
             gap: 20px;
         }
 
+        .foto-regalo{
+            max-width: webkit-fill-available;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media (min-width: 768px) {
             .hero{
                 height: 85vh;
-                background-position: top;
-                background-image: url(Pablorosi1.jpg);
+                background-position: center;
+                background-image: url(fotositomatrimonio.jpg);
             }
 
             h2{
                 font-size: 80px;
+            }
+
+            .foto-regalo{
+                max-width: 500px !important;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
             }
         }
 
@@ -68,12 +84,16 @@
             .hero{
                 height: 85vh;
                 background-position-y: top;
-                background-image: url(Pablorosi1.jpg);
+                background-image: url(fotositomatrimonio.jpg);
             }
 
             h2{
                 font-size: 80px;
             }
+        }
+
+        .data-text{
+            font-size: 1rem;
         }
 
         .hero::before {
@@ -146,20 +166,8 @@
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background-color: #c3cfe2;
-        }
-
-        /* Our Story */
         .our-story {
-            background-color: #f7e3da;
+            background-color: #ffdf82;
         }
 
         .story-content {
@@ -316,12 +324,13 @@
             display: inline-block;
             background-color: #c3cfe2;
             color: #333;
-            padding: 24px 24px;
+            padding: 16px 20px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             max-width: fit-content;
+            font-size: 14px;
         }
 
         .btn:hover {
@@ -437,7 +446,6 @@
         }
 
         .info-column {
-            background-color: #f9f9f9;
             border-radius: 8px;
             padding: 1rem;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -534,6 +542,7 @@
             .info-column {
                 flex: 1;
             }
+
         }
     </style>
 </head>
@@ -552,7 +561,7 @@
         </div>
     </section>
 
-    <section class="intro-text" style="padding:80px 0 40px 0; background-color: #f7e3da">
+    <section class="intro-text" style="padding:80px 0 40px 0; background-color: #ffdf82">
             <h2 class="">Rosalia & Pablo</h2>
             <p class="data-text" style="text-shadow:0 2px 8px rgba(0,0,0,0.2);">20 Settembre 2025</p>
         <!-- <img src="fioricampo3.webp" alt="Fiori di campo" style="width: 100%; height: auto; border-radius: 8px; margin-top: 2rem;"> -->
@@ -560,7 +569,7 @@
 
 
     <!-- Our Story Section -->
-    <section class="our-story" id="story" style="padding: 40px;">
+    <section class="our-story" id="story" style="padding: 40px 20px">
         <div class="container">
             <div class="story-content">
                 <div class="story-text">
@@ -645,6 +654,7 @@
                         <div class="location-details">
                             <p><strong>Indirizzo:</strong> Via del Fagiano, 1, 54100 Massa MS</p>
                             <p><strong>Distanza dal teatro:</strong> 9 minuti in auto</p>
+                            <p>Per permetterci di organizzare al meglio il ricevimento, vi chiediamo di comunicarci eventuali esigenze alimentari specifiche.</p>
                         </div>
                         <a href="https://g.co/kgs/GcFu7Wm" target="_blank" class="btn">Visualizza sulla mappa</a>
                     </div>
@@ -676,12 +686,13 @@
             <div class="info-columns">
                 <div class="info-column regalo">
                     <div class="info-icon">🎁</div>
-                    <p>Il nostro desiderio più grande è che tutte e tutti possiate partecipare al nostro giorno! Se vi facesse piacere contribuire con un dono, potete farlo qui!</p>
-                    <div class="regalo-details">
+                    <p style="max-width: 400px;">Il nostro desiderio più grande è che tutte e tutti possiate partecipare al nostro giorno! Se vi facesse piacere contribuire con un dono, potete farlo qui!</p>
+                    <div class="regalo-details" style="text-align: center;">
                         <p><strong>IBAN:</strong> IT36X0306901775000000342173</p>
                         <p><strong>Intestataria:</strong>Rosalia Giannotti</p>
                         <p><strong>Causale:</strong>Casette 2025 l'Evento</p>
                     </div>
+
                 </div>
                 <!-- <div class="info-column alloggio">
                     <div class="info-icon">🏨</div>
@@ -709,6 +720,9 @@
                         </div>
                     </div>
                 </div> -->
+            </div>
+            <div style="justify-content: center; align-items: center; display: flex; margin-top: 2rem;">
+                <img class="foto-regalo" src="fotositomatrimonio2.jpg" alt="Villa Bellezza">
             </div>
         </div>
     </section>
