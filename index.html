@@ -96,6 +96,57 @@
             font-size: 1rem;
         }
 
+        .alloggio {
+            background-color: #f9f9f9;
+        }
+
+        .hotel-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hotel-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hotel-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .hotel-info {
+            margin-bottom: 1rem;
+        }
+
+        .hotel-info p {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .hotel-info strong {
+            color: #333;
+        }
+
+        .hotel-note {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
         .hero::before {
             content: "";
             position: absolute;
@@ -283,7 +334,6 @@
         }
 
         .location-card h3 {
-
             text-align: center;
             padding: 1.5rem;
             background-color: #f5f7fa;
@@ -436,7 +486,7 @@
 
         /* Regalo e Alloggio Section */
         .regalo-alloggio {
-            background-color: #fff;
+            background-color: #fff
         }
 
         .info-columns {
@@ -676,6 +726,28 @@
         </div>
     </section>
 
+    <section class="alloggio" id="alloggio">
+        <div class="container">
+            <h2 class="section-title">Dove Alloggiare</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Per gli ospiti che vengono da fuori città, abbiamo selezionato alcune strutture nelle vicinanze delle nostre location:</p>
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <h3>🏨 Hotel Luna</h3>
+                    <div class="hotel-info">
+                        <p><strong>Indirizzo:</strong> Via Tornaboni, 17, 54100 Marina di Massa MS</p>
+                        <p><strong>Telefono:</strong> 0585 241472 / 3755156144</p>
+                        <p><strong>Email:</strong> luna@lunahotel.net</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #fff3cd; border-radius: 8px;">
+                <p><strong>💡 Consiglio:</strong> Vi consigliamo di prenotare con anticipo, soprattutto per il weekend del matrimonio. Menzionate che partecipate al matrimonio di Rosalia & Pablo per eventuali sconti o tariffe speciali!</p>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Regalo e Alloggio Section -->
     <section class="regalo-alloggio" id="info">
         <div class="container">
@@ -690,34 +762,8 @@
                         <p><strong>Causale:</strong>Casette 2025 l'Evento</p>
                     </div>
                 </div>
-                <!-- <div class="info-column alloggio">
-                    <div class="info-icon">🏨</div>
-                    <h3>Dove Dormire</h3>
-                    <p>Per gli ospiti che vengono da fuori città, abbiamo selezionato alcune strutture nelle vicinanze della location:</p>
-                    <div class="hotel-list">
-                        <div class="hotel-item">
-                            <h4>Hotel Belvedere</h4>
-                            <p><strong>Distanza:</strong> 5 minuti dalla location</p>
-                            <p><strong>Telefono:</strong> +39 02 1234567</p>
-                            <p><strong>Email:</strong> info@hotelbelvedere.it</p>
-                            <p>Menzionate che siete ospiti del matrimonio per ottenere uno sconto speciale.</p>
-                        </div>
-                        <div class="hotel-item">
-                            <h4>Residence Flora</h4>
-                            <p><strong>Distanza:</strong> 10 minuti dalla location</p>
-                            <p><strong>Telefono:</strong> +39 02 7654321</p>
-                            <p><strong>Email:</strong> booking@residenceflora.it</p>
-                        </div>
-                        <div class="hotel-item">
-                            <h4>B&B Il Giardino</h4>
-                            <p><strong>Distanza:</strong> 15 minuti dalla location</p>
-                            <p><strong>Telefono:</strong> +39 02 9876543</p>
-                            <p><strong>Email:</strong> ilgiardino@email.it</p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-            <div style="align-items: center; text-align: center; padding: 100px 30px 50px 30px;">
+            <div style="align-items: center; text-align: center; padding: 50px 30px 50px 30px; margin-top: 50px; background-color: #ffcdcd;">
                 Per confermare la vostra partecipazione, vi chiediamo di inviare una mail all'indirizzo email <a href="mailto:prioscrocco@gmail.com">prioscrocco@gmail.com</a> specificando eventuali intolleranze alimentari o altre preferenze entro il<strong> 31 Luglio 2025</strong>
             </div>
             <div style="justify-content: center; align-items: center; display: flex; margin-top: 2rem;">
